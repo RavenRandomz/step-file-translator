@@ -44,14 +44,14 @@ while read p; do
   echo "Attemting to match: $chinese"
   if [[ "$p"="$chinese" ]]; then
 	  echo "$english" >> ${out}
-	  i++
+	  ((++i))
 	  echo "match"
   else
 	  echo "${p}" >> ${out}
 	  echo "no match"
-  echo "Index: $i"
 fi
 
+echo "Index: $i"
 done <./robot-unicode.STEP
 
 #for i in $(seq 0 ${linecount});
