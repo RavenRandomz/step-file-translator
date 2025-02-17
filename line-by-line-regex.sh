@@ -42,15 +42,15 @@ while read p; do
 
   echo "Current line: $p"
   echo "Attemting to match: $chinese"
-  if [[ "$p"=="$chinese" ]]; then
-	  echo "$english" >> ${out}
-	  ((++i))
-	  echo "match"
+  if [[ "${p}"=="${chinese}" ]]; then
+	  	echo "$english" >> ${out}
+	  	((++i))
+	 	echo "match"
 		english=${TRANSLATED_LINES[$i]}
 		chinese=${CHINESE_LINES[$i]}
   else
-	  echo "${p}" >> ${out}
-	  echo "no match"
+	  	echo "${p}" >> ${out}
+	  	echo "no match"
 fi
 
 echo "Index: $i"
