@@ -40,11 +40,14 @@ english=${TRANSLATED_LINES[$i]}
 chinese=${CHINESE_LINES[$i]}
 while read p; do
 
-  echo "Current line: $p"
-  echo "Attemting to match: $chinese"
-  if [[ "${p}"=="${chinese}" ]]; then
+  	echo "Current line: $p"
+  	echo "Attemting to match: $chinese"
+	echo "Index: $i"
+if [ "$p" = "$chinese" ]; then
 	  	echo "$english" >> ${out}
-	  	((++i))
+
+		((i++))
+
 	 	echo "match"
 		english=${TRANSLATED_LINES[$i]}
 		chinese=${CHINESE_LINES[$i]}
@@ -53,7 +56,6 @@ while read p; do
 	  	echo "no match"
 fi
 
-echo "Index: $i"
 done <./robot-unicode.STEP
 
 #for i in $(seq 0 ${linecount});
