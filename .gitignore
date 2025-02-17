@@ -3,3 +3,4 @@ archive/
 *.STEP
 translated-archive/
 split-translations/
+*.swp
