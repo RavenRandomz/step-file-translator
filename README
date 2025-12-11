@@ -1,0 +1,4 @@
+This assumes that the file is either UTF-8 or gbh2232
+```
+bash unified.sh file_to_translate.STEP
+```
